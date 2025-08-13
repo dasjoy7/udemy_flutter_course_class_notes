@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_class_notes/gradient_container.dart';
 
-void main(){
+void main() {
   runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: const GradientContainer(
-            Colors.deepPurple,
-            Colors.yellow),
-      ),
+    const MaterialApp(
+      home: Scaffold(body: GradientContainer(Colors.deepPurple, Colors.yellow)),
     ),
   );
 }
