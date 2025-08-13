@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 // import 'package:udemy_flutter_course/styled_text.dart';
 
 const startAlignment = Alignment.centerRight;
-const endAlignment= Alignment.bottomCenter;
+const endAlignment = Alignment.bottomCenter;
 
-class GradientContainer extends StatelessWidget{
+class GradientContainer extends StatelessWidget {
   const GradientContainer(this.color1, this.color2, {super.key});
 
-  const GradientContainer.purple({super.key}):
-        color1 = Colors.deepPurple,
-        color2 = Colors.indigo;
-
+  const GradientContainer.purple({super.key})
+    : color1 = Colors.deepPurple,
+      color2 = Colors.indigo;
 
   final Color color1;
   final Color color2;
 
+  void rollDice() {}
 
   @override
-  Widget build(context){
+  Widget build(context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -27,14 +27,26 @@ class GradientContainer extends StatelessWidget{
         ),
       ),
       child: Center(
-        child: Image.asset('assets/dice.png', width: 200,),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset('assets/dice.png', width: 200),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                // padding: EdgeInsets.only(top: 20),
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(fontSize: 24),
+              ),
+              child: const Text('Roll Dice'),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-
-
 
 // class GradientContainer extends StatelessWidget{
 //   const GradientContainer({super.key,required this.colors});
